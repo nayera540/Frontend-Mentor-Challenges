@@ -52,7 +52,6 @@ body{
     position: relative; /* Add positioning */
     z-index: 1; /* Set the z-index to bring it above other elements if needed */
     top: 5px; /* Adjust the distance to move it downward */
-    /* overflow: hidden; */
 }
 .circle{
     width: 45px;
