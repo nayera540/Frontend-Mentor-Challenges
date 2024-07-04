@@ -5,32 +5,32 @@ body {
   font-weight: 400;
   font-style: normal;
   color: hsl(30, 10%, 34%);
+  margin: 0;
+  padding: 0;
 }
 
+/* Mobile-first base styles */
 .main--recipe {
   background-color: hsl(0, 0%, 100%);
-  width: 650px;
-  height: 100%;
-  display: block;
-  margin: auto;
-  margin-top: 90px;
-  margin-bottom: 90px;
+  width: 90%;
+  max-width: 650px;
+  margin: 20px auto;
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 img {
-  width: 650px;
-  height: 265px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
-h1,
-h2 {
+h1, h2{
   font-family: "Young Serif", serif;
   font-weight: 400;
-  font-style: normal;
-  color: hsl(24, 5%, 18%);
+  margin: 10px 0;
+  color: hsl(24, 5%, 18%)
 }
 
 h2 {
@@ -39,13 +39,17 @@ h2 {
 
 h3 {
   color: hsl(332, 51%, 32%);
-  padding-left: 20px;
+  padding-left: 0;
+}
+
+.prepare--recipe, .ingredients--recipe, .instructions--recipe, .nutrition--recipe {
+  margin: 10px 0;
+  padding: 10px;
+  
 }
 
 .prepare--recipe {
   background-color: hsl(330, 100%, 98%);
-  width: 640px;
-  padding: 10px 0 10px 10px;
   border-radius: 10px;
 }
 
@@ -54,47 +58,34 @@ h3 {
   font-weight: bold;
 }
 
-ul {
+ul, ol {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-ul li {
+ul li, ol li {
   margin: 10px 0;
 }
 
-.prepare--recipe ul li::before {
+.prepare--recipe ul li::before, .ingredients--recipe ul li::before {
   content: "•";
-  color: hsl(332, 51%, 32%);
   display: inline-block;
   width: 1em;
-  margin-left: 1.75em;
   margin-right: 0.5em;
+}
+
+.prepare--recipe ul li::before {
+  color: hsl(332, 51%, 32%);
 }
 
 .ingredients--recipe ul li::before {
-  content: "•";
   color: hsl(14, 45%, 36%);
-  display: inline-block;
-  width: 1em;
-  margin-right: 0.5em;
-}
-
-.ingredients--recipe {
-  margin-bottom: 30px;
-}
-
-ol {
-  counter-reset: my-awesome-counter; /* Initialize the counter */
-  list-style: none; /* Remove default list styling */
-  padding: 0;
 }
 
 ol li {
   counter-increment: my-awesome-counter; /* Increment the counter */
-  margin: 10px -10px;
-  padding-left: 2.7em;
-  padding-right: 2em; /* Add padding to make space for the custom counter */
+  padding-left: 2em;
   position: relative;
 }
 
@@ -103,7 +94,7 @@ ol li::before {
   color: hsl(14, 45%, 36%); /* Your desired color */
   font-weight: bold;
   position: absolute; /* Position absolutely relative to the li */
-  left: 0; /* Adjust this value to move the number to the left */
+  left: -0.75em; /* Adjust this value to move the number to the left */
   width: 1.5em; /* Adjust width to match the padding */
   text-align: right; /* Align the text to the right for proper spacing */
 }
@@ -116,7 +107,6 @@ ol li::before {
 
 .nutrition--recipe {
   padding: 10px;
-  border-radius: 10px;
 }
 
 .nutrition--table--recipe {
@@ -125,8 +115,7 @@ ol li::before {
   margin-top: 10px;
 }
 
-.nutrition--table--recipe th,
-.nutrition--table--recipe td {
+.nutrition--table--recipe th, .nutrition--table--recipe td {
   border-bottom: 1px solid hsl(30, 10%, 74%); /* Border around each cell */
   padding: 12px;
   text-align: left;
@@ -137,9 +126,30 @@ ol li::before {
   border-bottom: none;
 }
 
-.nutrition--table--recipe td.table--column2,
-.nutrition--table--recipe td.table--column3,
-.nutrition--table--recipe td.table--column4 {
+.nutrition--table--recipe td.table--column2, .nutrition--table--recipe td.table--column3, .nutrition--table--recipe td.table--column4 {
   color: hsl(14, 45%, 36%);
   font-weight: bold;
+}
+
+/* Media query for tablets and up */
+@media (min-width: 768px) {
+  .main--recipe {
+    width: 80%;
+    padding: 30px;
+  }
+}
+
+/* Media query for desktops and up */
+@media (min-width: 1024px) {
+  .main--recipe {
+    width: 70%;
+    padding: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main--recipe {
+    width: 60%;
+    padding: 50px;
+  }
 }
