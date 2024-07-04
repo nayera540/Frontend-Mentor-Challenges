@@ -21,7 +21,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 
 ### Links
 
-- Live Site URL: [Recipe-Page]([https://your-live-site-url.com](https://recipee-page.netlify.app/))
+- Live Site URL: [Recipe-Page](https://recipee-page.netlify.app/)
 
 ## My process
 
