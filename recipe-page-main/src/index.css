@@ -1,0 +1,145 @@
+body {
+  background-color: hsl(30, 54%, 90%);
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: hsl(30, 10%, 34%);
+}
+
+.main--recipe {
+  background-color: hsl(0, 0%, 100%);
+  width: 650px;
+  height: 100%;
+  display: block;
+  margin: auto;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+img {
+  width: 650px;
+  height: 265px;
+  border-radius: 10px;
+}
+
+h1,
+h2 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: hsl(24, 5%, 18%);
+}
+
+h2 {
+  color: hsl(14, 45%, 36%);
+}
+
+h3 {
+  color: hsl(332, 51%, 32%);
+  padding-left: 20px;
+}
+
+.prepare--recipe {
+  background-color: hsl(330, 100%, 98%);
+  width: 640px;
+  padding: 10px 0 10px 10px;
+  border-radius: 10px;
+}
+
+#recipe--bold {
+  color: hsl(30, 10%, 34%);
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+.prepare--recipe ul li::before {
+  content: "•";
+  color: hsl(332, 51%, 32%);
+  display: inline-block;
+  width: 1em;
+  margin-left: 1.75em;
+  margin-right: 0.5em;
+}
+
+.ingredients--recipe ul li::before {
+  content: "•";
+  color: hsl(14, 45%, 36%);
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5em;
+}
+
+.ingredients--recipe {
+  margin-bottom: 30px;
+}
+
+ol {
+  counter-reset: my-awesome-counter; /* Initialize the counter */
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+}
+
+ol li {
+  counter-increment: my-awesome-counter; /* Increment the counter */
+  margin: 10px -10px;
+  padding-left: 2.7em;
+  padding-right: 2em; /* Add padding to make space for the custom counter */
+  position: relative;
+}
+
+ol li::before {
+  content: counter(my-awesome-counter) ". "; /* Display the counter */
+  color: hsl(14, 45%, 36%); /* Your desired color */
+  font-weight: bold;
+  position: absolute; /* Position absolutely relative to the li */
+  left: 0; /* Adjust this value to move the number to the left */
+  width: 1.5em; /* Adjust width to match the padding */
+  text-align: right; /* Align the text to the right for proper spacing */
+}
+
+.instructions--recipe {
+  padding-bottom: 10px;
+  border-top: 1px solid hsl(30, 10%, 74%);
+  border-bottom: 1px solid hsl(30, 10%, 74%);
+}
+
+.nutrition--recipe {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nutrition--table--recipe {
+  width: 100%;
+  border-collapse: collapse; /* Combine borders */
+  margin-top: 10px;
+}
+
+.nutrition--table--recipe th,
+.nutrition--table--recipe td {
+  border-bottom: 1px solid hsl(30, 10%, 74%); /* Border around each cell */
+  padding: 12px;
+  text-align: left;
+}
+
+/* Remove the border-bottom of the last row */
+.nutrition--table--recipe tr:last-child td {
+  border-bottom: none;
+}
+
+.nutrition--table--recipe td.table--column2,
+.nutrition--table--recipe td.table--column3,
+.nutrition--table--recipe td.table--column4 {
+  color: hsl(14, 45%, 36%);
+  font-weight: bold;
+}
