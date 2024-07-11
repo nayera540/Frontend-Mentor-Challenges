@@ -1,0 +1,114 @@
+/* Base styles */
+body {
+  background-color: hsl(0, 0%, 8%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 14px;
+}
+
+.container {
+  padding: 40px 30px; /* Maintain your padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(0, 0%, 12%);
+  width: 335px; /* Keep your fixed width */
+  height: 535px; /* Keep your fixed height */
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+
+.header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.header__name {
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.header__address {
+  color: hsl(75, 94%, 57%);
+  font-weight: 600;
+  margin-top: -10px;
+  font-size: 0.9rem;
+}
+
+.header__title {
+  color: hsl(0, 0%, 100%);
+  font-size: 0.87rem;
+  opacity: 0.7;
+}
+
+.links-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  padding-bottom: 40px;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.links-list__item {
+  margin-bottom: 15px;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 290px; /* Keep your fixed width */
+  height: 40px; /* Keep your fixed height */
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 20%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: hsl(75, 94%, 57%);
+  color: hsl(0, 0%, 12%);
+}
+
+
