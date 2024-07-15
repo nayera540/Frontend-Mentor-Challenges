@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const faqs = [
   {
@@ -18,7 +18,7 @@ const faqs = [
   way to showcase your skills to potential employers!`,
   },
   {
-    title: "How can I get help if I'm stuck on a Frontend Mentor challenge?",
+    title: "How can I get help if I'm stuck on a challenge?",
     text: `The best place to get help is inside Frontend Mentor's Discord community. There's a help 
   channel where you can ask questions and seek support from other community members.`,
   },
@@ -29,7 +29,6 @@ function App() {
     <div className="App">
       <Background />
       <MainSection />
-      {/* <Footer/> */}
     </div>
   );
 }
@@ -70,12 +69,24 @@ function FaqsTitle() {
 }
 
 function Accordion() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [openItems, setOpenItems] = useState(faqs.map((faq, index) => index === 0));
+
+  const handleToggle = (index) => {
+    setOpenItems((prev) =>
+      prev.map((isOpen, i) => (i === index ? !isOpen : isOpen))
+    );
+  };
 
   return (
     <div className="accordion">
       {faqs.map((el, i) => (
-        <AccordionItem title={el.title} onOpen={setIsOpen} isOpen={isOpen} key={el.title}>
+        <AccordionItem
+          title={el.title}
+          num={i}
+          isOpen={openItems[i]}
+          onToggle={() => handleToggle(i)}
+          key={el.title}
+        >
           {el.text}
         </AccordionItem>
       ))}
@@ -83,62 +94,74 @@ function Accordion() {
   );
 }
 
-function AccordionItem({ title, children, onOpen, isOpen }) {
-  function handleToggle() {
+function AccordionItem({ title, children, isOpen, onToggle }) {
+  const contentRef = useRef(null);
 
-  }
+  useEffect(() => {
+    if (isOpen) {
+      contentRef.current.style.maxHeight = `fit-content`;
+      contentRef.current.style.padding = "1rem 0";
+    } else {
+      contentRef.current.style.maxHeight = "0";
+      contentRef.current.style.padding = "0";
+    }
+  }, [isOpen]);
 
   return (
-    <div className={`accordion__item`} onClick={handleToggle}>
-      <p className="item__title">{title}</p>
-      <p className="item__icon">
-        {isOpen ? (
-          <span className="icon__open">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="31"
-              fill="none"
-              viewBox="0 0 30 31"
-            >
-              <path
-                fill="#301534"
-                d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"
-              />
-            </svg>
-          </span>
-        ) : (
-          <span className="icon__closed">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="31"
-              fill="none"
-              viewBox="0 0 30 31"
-            >
-              <path
-                fill="#AD28EB"
-                d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.203 12.203 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 0 1-1.876 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 0 1 1.876 0v3.75h3.75a.938.938 0 0 1 0 1.876Z"
-              />
-            </svg>
-          </span>
-        )}
-      </p>
-      {isOpen && <div className="accordion__content">{children}</div>}
+    <div
+      className={`accordion__item ${isOpen ? "open" : "closed"}`}
+      onClick={onToggle}
+    >
+      <div className="accrodion__header">
+        <p className="item__title">{title}</p>
+        <p className="item__icon">
+          {isOpen ? (
+            <span className="icon__open">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="31"
+                fill="none"
+                viewBox="0 0 30 31"
+              >
+                <path
+                  fill="#301534"
+                  d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"
+                />
+              </svg>
+            </span>
+          ) : (
+            <span className="icon__closed">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="31"
+                fill="none"
+                viewBox="0 0 30 31"
+              >
+                <path
+                  fill="#AD28EB"
+                  d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 1 1-1.875 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 1 1 1.875 0v3.75h3.75a.938.938 0 1 1 0 1.876Z"
+                />
+              </svg>
+            </span>
+          )}
+        </p>
+      </div>
+      <div
+        className="accordion__content"
+        ref={contentRef}
+        style={{
+          maxHeight: isOpen ? "fit-content" : "0",
+          padding: isOpen ? "1rem 0" : "0",
+          overflow: "hidden",
+          transition: "max-height 0.5s ease-out, padding 0.5s ease-out",
+        }}
+        aria-hidden={!isOpen}
+      >
+        <p>{children}</p>
+      </div>
     </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      Challenge by{" "}
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-        {" "}
-        Frontend Mentor{" "}
-      </a>
-      . Coded by <a href="#">Nayera Hazem</a>.
-    </footer>
   );
 }
 

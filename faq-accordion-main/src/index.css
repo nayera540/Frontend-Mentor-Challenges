@@ -12,6 +12,7 @@
   --light-pink: hsl(275, 100%, 97%);
   --grayish-purple: hsl(292, 16%, 49%);
   --dark-purple: hsl(292, 42%, 14%);
+  --purple: hsl(281, 83%, 54%);
   --font-weight1: 700;
   --font-weight2: 600;
   --font-weight3: 400;
@@ -31,25 +32,105 @@ body {
   background-size: cover;
 }
 
-.accordion__main{
+.accordion__main {
   background-color: var(--white);
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 37.5rem;
-  padding: 1.5rem;
+  padding: 2.3rem;
   border-radius: 10px;
-  margin-top: -80px;
+  margin-top: -120px;
+  margin-bottom: 5rem;
+  box-shadow: 0px 2rem 4rem rgba(0, 0, 0, 0.1);
 }
 
-.accordion__title{
+.accordion__title {
   display: flex;
   align-items: center;
 }
 
-.accordion__title h1{
+.accordion__title h1 {
   margin-left: 1rem;
   font-weight: var(--font-weight1);
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--dark-purple);
+}
+
+.accordion {
+  margin-top: 1.8rem;
+}
+
+.item__title {
+  color: var(--dark-purple);
+  cursor: pointer;
+  font-weight: var(--font-weight2);
+  min-width: fit-content;
+  margin-right: 2rem;
+  font-size: 1.125rem;
+}
+
+.item__title:hover {
+  color: var(--purple);
+  cursor: pointer;
+}
+
+.accrodion__header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.item__icon {
+  margin-top: -0.3rem;
+}
+
+.item__icon:hover {
+  cursor: pointer;
+}
+
+.accordion__item {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--light-pink);
+  padding-bottom: 1rem;
+}
+
+.accordion__item:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.accordion__content {
+  color: var(--grayish-purple);
+  font-weight: var(--font-weight3);
+  overflow: hidden;
+  line-height: 1.5rem;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  transition: max-height 0.3s ease-out 2s, padding 0.3s ease-out;
+}
+
+
+@media (max-width: 768px) {
+  /* Adjust layout for smaller screens */
+  .accordion__main {
+    margin: 1.5rem;
+    margin-top: -120px;
+  }
+  .accrodion__header {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .item__icon {
+    margin-top: -1.25rem; /* Adjust margin to separate icon on smaller screens */
+    align-self: flex-end; /* Align icon to the right on smaller screens */
+  }
+}
+
+/* Example of removing margin on the last child if needed */
+.accordion__item:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
 }
