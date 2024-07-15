@@ -1,13 +1,55 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --font-weight1: 700;
+  --font-weight2: 600;
+  --font-weight3: 400;
+  --font-size: 16px;
+}
+
+body {
+  background-color: var(--light-pink);
+  font-size: var(--font-size);
+}
+
+.background {
+  background-image: url("../assets/images/background-pattern-desktop.svg");
+  width: 100%;
+  height: 36vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.accordion__main{
+  background-color: var(--white);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 37.5rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: -80px;
+}
+
+.accordion__title{
+  display: flex;
+  align-items: center;
+}
+
+.accordion__title h1{
+  margin-left: 1rem;
+  font-weight: var(--font-weight1);
+  font-size: 2.5rem;
+  color: var(--dark-purple);
 }
