@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+:root {
+  --light-red: hsl(0, 100%, 67%);
+  --orange-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavnder: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  --ash: hsl(0, 0%, 91%);
+  --ash-2: hsl(0, 2%, 66%);
+
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 2px 10px 20px 1px rgb(17 37 212 / 10%);
+  border-radius: 20px;
+  height: auto;
+  align-items: start;
+}
+
+.results__container {
+  border-radius: 20px;
+  background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+  width: 21.8rem;
+  color: #fff;
+  margin: 0;
+  display: inline;
+  height: auto;
+  padding: 0.9rem 2.8rem;
+  text-align: center;
+}
+
+.results__container h1 {
+  color: var(--light-lavnder);
+  margin: 1.15rem 0;
+  font-size: 24px;
+}
+
+.results__score__container {
+  width: 10.25rem;
+  padding: 1.6rem;
+  height: auto;
+  padding-bottom: 2.8rem;
+  display: block;
+  margin: 1.8rem auto;
+  border-radius: 50%;
+  background: linear-gradient(var(--violet-blue), var(--persian-blue));
+  height: auto;
+  color: var(--light-lavnder);
+}
+
+.results__score {
+  font-size: 18px;
+}
+
+.result__score {
+  color: #fff;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+
+
+.comment__header {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 0.9rem;
+}
+
+.comment {
+  color: var(--light-lavnder);
+  font-size: 18px;
+  display: block;
+  margin-bottom: 45px;
+}
+
+.results__summary {
+  height: auto;
+  margin: 0;
+  display: inline;
+  height: auto;
+  padding: 0.9rem 1.8rem;
+}
+
+.summary__header {
+  color: var(--dark-gray-blue);
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0.9rem 0;
+}
+
+.results__items {
+
+  display: inline;
+}
+
+.result__item {
+  font-size: 18px !important;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.result__item .item__header,
+.result__item .item__score,
+.result__item .score {
+  font-size: inherit;
+}
+
+.result__item div {
+  width: 39%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.item__reaction {
+  background-color: hsl(0deg 100% 67% / 10%);
+}
+
+.item__reaction .item__header {
+  color: var(--light-red);
+  font-size: 18px;
+}
+
+.item__memory {
+  background-color: hsl(39, 100%, 56%, 0.1);
+}
+
+.item__verbal {
+  background-color: hsl(166, 100%, 37%, 0.1);
+}
+
+.item__visual {
+  background-color: hsl(252, 100%, 67%, 0.1);
+}
+
+.item__memory .item__header {
+  font-size: 18px;
+  color: var(--orange-yellow);
+}
+
+.item__verbal div {
+  width: 34%;
+}
+
+.item__visual div {
+  width: 30.5%;
+}
+
+.item__verbal .item__header {
+  font-size: 18px;
+  color: var(--green-teal);
+}
+
+.item__visual .item__header {
+  font-size: 18px;
+  color: var(--cobalt-blue);
+}
+
+.item__score {
+  color: var(--ash-2);
+  font-weight: 600;
+}
+
+.score {
+  color: var(--dark-gray-blue);
+  font-weight: bold;
+  margin-right: 7px;
+}
+
+.results__button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin-top: 25px;
+  width: 100%;
+  border-radius: 40px;
+  background-color: var(--dark-gray-blue);
+  color: #fff;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.results__button:hover {
+  background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+  cursor: pointer;
+}
+
+@media (max-width: 768px){
+  body{
+    padding: 0;
+    margin: 0;
+  }
+
+  .container{
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .results__container{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
