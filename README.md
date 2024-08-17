@@ -37,3 +37,17 @@ This repository contains my solutions to various Frontend Mentor challenges. Eac
 ![Screenshot_20240804_152904](https://github.com/user-attachments/assets/b51bfc33-0dcf-40df-a2d4-b2442c245692)
 
 ### [Live Site](https://66af6d510e15ab85be459bf4--illustrious-pie-dbbe73.netlify.app/)
+
+---
+[Interactive rating component](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI)
+
+![Screenshot_20240817_161634](https://github.com/user-attachments/assets/c22e94a0-ef6e-4127-9e99-10fe49cb0f34)
+
+### [Live Site](https://66bfc0cca07bafab04ff779d--clinquant-donut-827336.netlify.app/)
+
+---
+[Blog preview card](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS)
+
+![Screenshot_20240805_153240](https://github.com/user-attachments/assets/45f59941-01d6-4bd7-9bd9-1246ec905acb)
+
+### [Live Site](https://66a7a0161c9eef0094ca3527--statuesque-seahorse-0b1f13.netlify.app/)
