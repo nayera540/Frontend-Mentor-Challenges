@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    body{
+        @apply bg-very-dark-blue grid p-4 place-content-center min-h-screen;
+    }
+    .stats div{
+        @apply flex flex-col text-2xl font-bold font-inter mb-6;
+    }
+    .stats div:last-child,
+    .stats div span{
+        @apply uppercase
+    }
+    .stats div span{
+        @apply text-xs text-trans-white-stat font-medium mt-0.5
+    }
+}
