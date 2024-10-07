@@ -13,7 +13,7 @@ export default {
                 "shadow-blue": "hsl(225deg 76.83% 87.05%);"
             },
             backgroundImage:{
-                "desktop-pattern-img": "url('images/pattern-background-desktop.svg')"
+                "desktop-pattern-img": "url('/images/pattern-background-desktop.svg')"
             },
             fontFamily:{
                 "red-hat": ["Red Hat Display", "sans-serif"],
