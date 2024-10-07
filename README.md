@@ -1,6 +1,6 @@
 # [Frontend-Mentor-Challenges](https://www.frontendmentor.io/challenges?sort=difficulty%7Casc&type=free%2Cfree-plus)
 
-This repository contains my solutions to various Frontend Mentor challenges. Each challenge showcases my ability to translate design specifications into responsive and interactive web interfaces using HTML, CSS, JavaScript and React.js.
+This repository contains my solutions to various Frontend Mentor challenges. Each challenge showcases my ability to translate design specifications into responsive and interactive web interfaces using HTML, CSS, JavaScript, Tailwind CSS and React.js.
 
 ---
 ## Solved Challenges
