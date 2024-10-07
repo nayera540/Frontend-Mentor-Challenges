@@ -55,7 +55,7 @@ function Plan() {
 
 function Payment() {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-3">
             <button className="bg-Bright-blue text-white font-semibold rounded-lg py-2.5 shadow-xl shadow-shadow-blue mb-6 hover:bg-hover-blue duration-200">
                 Proceed to Payment
             </button>
